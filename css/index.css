@@ -284,11 +284,14 @@ footer a {
     color: var(--primary-color);
     padding: 15px;
     display: flex;
+    justify-content: center;
 }
 .box {
     border: 1px;
     border-color: #dbd7d9;
-    margin: 6px;
     border-style: solid;
     border-radius: 5px;
+}
+.text_center+p {
+    padding-left: 15px;
 }
