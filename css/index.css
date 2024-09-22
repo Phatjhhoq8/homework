@@ -1,0 +1,294 @@
+:root {
+    --primary-color: #ed4190;
+}
+/* *{
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    font-size: 100%;
+} */
+ a{
+    text-decoration: none;
+ }
+ul {
+    list-style: inside;
+}
+.text_center{
+    text-align: center;
+}
+.img_center {
+    margin-left: 17%;
+}
+h1 {
+    /* grid-area: left-cell; */
+    text-transform: uppercase;
+    color: #f90b6d;
+    font-size: 28px;
+    margin: 12px 0px 0px;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 300px;
+    height: 34px;
+}
+.gradient {
+    content: "";
+    position: relative;
+    width: 200px;
+    height: 3px;
+    margin: 0px 0px 16px;
+    left: 42%;
+    transform: rotateX('20') translateX(50%);
+    background: radial-gradient(#cddc39,#fff);
+}
+h2 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 300px;
+    height: 28px;
+    /* text-align: center; */
+    color: var(--primary-color);
+    margin: 5px 0px 10px;
+}
+h3 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 300px;
+    height: 24px;
+    color: #f90b6d;
+    font-size: 20px;
+    margin: 5px 0px 10px;
+}
+/* body */
+body{
+    display: grid;
+    padding: 0px 5px;
+    border: 1px;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+    min-width: 1024px;
+    font-size: 1.2em;
+    top: 0px;
+}
+/* một cột */
+.col1 {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: auto auto auto;
+    /* grid-template-rows: auto auto auto; */
+}
+
+
+/* hai cột lệch phải */
+.col2 {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 10px;
+}
+.col2_aside_left {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+/* hai cột lệch trái */
+.col2_article_left {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+/* hai cột đối xứng */
+.col2_center {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+/* ba cột  */
+.col3_aside_left {
+    grid-area: left-cell;
+    size: 1fr;
+}
+.col3_article {
+    grid-area: article-cell;
+    size: 3fr;
+}
+.col3_aside_right {
+    grid-area: right-cell;
+    size: 1fr;
+}
+/* header */
+header {
+    height: 100px;
+    background-image: url(../data/images/header.png);
+    padding: 0px 5px;
+    border: 1px;
+    border-color: #ccc7c8;
+    border-radius: 5px;
+    /* grid-area: header-cell; */
+}
+/* nav */ 
+nav {
+    margin-top: 13px;
+    display: flex;
+}
+nav a{
+    border-radius: 5px;
+    height: 20px;
+    text-align: center;
+    font-size: 17px;
+    background-color: #ffffff80;
+    padding: 2px 4px;
+    border: 1px;
+    border-style: solid;
+    border-color: #fff;
+    margin: 3px;
+    top: 0px;
+    box-shadow: 0px 0px 3px 0px #00000066;
+    color: var(--primary-color);
+    /* grid-area: nav-cell; */
+}
+nav  a:hover {
+    color: #fff;
+    background-color: #ed4190;
+}
+/* header img */
+.header1 {
+    position: absolute;
+    top: -20px;
+    animation-name: head1;
+    animation-duration: 3s;
+    left: 30%;
+}
+@keyframes head1 {
+    from {
+        left: 80%;
+    }
+    to {
+        left: 30%;
+    }
+}
+.header2 {
+    position: absolute;
+    top: 0px;
+    animation-name: head2;
+    animation-duration: 3s;
+    left: 45%;
+}
+@keyframes head2 {
+    from {
+        left: 80%;
+    }
+    to {
+        left: 45%;
+    }
+}
+.header3 {
+    position: absolute;
+    top: 10px;
+    animation-name: head3;
+    animation-duration: 3s;
+    left: 60%;
+}
+@keyframes head3 {
+    from {
+        left: 80%;
+    }
+    to {
+        left: 60%;
+    }
+}
+/* icon header */
+.icon {
+    box-shadow: 0px 0px 2px 0px #0000004d;
+    position: absolute;
+    right: 20px;
+    
+}
+.fa-search {
+    min-width: 20px;
+    min-height: 20px;
+    color: #fff;
+    background-color: #cddc39;
+    padding: 0px 4px 4px;
+    text-align: center;
+}
+.fa-search:hover {
+    cursor: pointer;
+}
+.fa-shopping-cart {
+    min-height: 20px;
+    min-width: 20px;
+    color: var(--primary-color);
+    background-color: #cddc39;
+    padding: 0px 4px 4px;
+    text-align: center;
+}
+img {
+    border-radius: 5px;
+}
+/* main */
+main {
+    display: grid;
+    background-color: #fff;
+    padding:  0px 5px;
+    border: 1px;
+    border-color: #ccc7c8;
+    border-radius: 5px;
+    /* grid-area: main-cell; */
+}
+/* aside */
+aside{
+    color: #000;
+    text-align: justify;
+    padding: 5px;
+    margin: 2px;
+}
+.prop {
+    padding-bottom: 5px;
+    width: 100%;
+    text-align: center;
+}
+div.prop > div {
+    display: inline-block;
+    min-width: 24%;
+    padding-top: 5px;
+    text-align: center;
+    border: 1px;
+    border-style: solid;
+    border-color: #ed4190;
+    border-radius: 5px;
+}
+/* footer */
+footer {
+    color: #000;
+    text-align: center;
+    padding: 0px 5px;
+    border-radius: 5px;
+    border: 1px;
+    border-color: #ccc7c8;
+    margin-top: 2px;
+}
+footer a {
+    color: var(--primary-color);
+}
+#home {
+    /* grid-area: footer-cell; */
+    position: fixed;
+    color: var(--primary-color);
+    background-image: url(../data/images/top.png);
+    background-size: 50px;
+    background-repeat: no-repeat;
+    padding: 30px;
+    right: 20px;
+    bottom: -5px;
+    z-index: 100;
+}
+/* sản phẩm */
+.gradie {
+    border-radius: 5px;
+    background: radial-gradient(#cddc39,#76f172);
+    color: var(--primary-color);
+    padding: 15px;
+    display: flex;
+}
+.box {
+    border: 1px;
+    border-color: #dbd7d9;
+    margin: 6px;
+    border-style: solid;
+    border-radius: 5px;
+}
