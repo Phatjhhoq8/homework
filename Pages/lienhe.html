@@ -28,66 +28,45 @@
                 <a href="lienhe.html">Liên Hệ</a>
             </div>
             <div class="icon">
-                <input type="text">
+                <input type="text" placeholder="Nhập nội dung tìm kiếm">
                 <i class="fas fa-search"></i>
                 <i class="fas fa-shopping-cart"></i>
             </div>
         </nav>
     </header>
-    <main>
-        <h1>Liên Hệ</h1>
-        <img src="/data/images/lienhe/check-in.png" alt="">
-
-        <h1>Địa chỉ: 0123,Tòa Nhà ABC,TP Cần Thơ</h1>
-        <p>Nếu bạn có góp ý,vui lòng liên hệ bằng thư điện tử hoặc sử dụng biểu mẫu bên dưới.Xin cảm ơn</p>
+    <main class="box">
+        <h1 class="theme">Liên Hệ</h1>
+        <div class="gradient"></div>
+        <div class="locate">
+            <p><i class="fas fa-map-marker-alt"></i><strong>Địa chỉ: 0123,Tòa Nhà ABC,TP Cần Thơ</strong> Nếu bạn có góp ý,vui lòng liên hệ bằng thư điện tử hoặc sử dụng biểu mẫu bên dưới.Xin cảm ơn</p>
+        </div>
         <form action="" method="post" enctype="application/x-www-form-urlencoded">
         <fieldset>
-            <legend>Góp ý</legend>
-            <table>
-                <tr>
-                    <td>
-                        <label for="userName">Họ Tên: </label>
-                    </td>
-                    <td>
-                        <input type="text" name="" id="userName" placeholder="Vui lòng nhập Họ tên của bạn">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="mail">Email:</label>
-                    </td>
-                    <td>
-                        <input type="email" name="" id="mail" placeholder="Vui lòng nhập địa chỉ Email">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="feedback">Chủ đề</label>
-                    </td>
-                    <td>
-                        <select size="1" id="feedback">
-                            <option value="">Về Sản Phẩm/Dịch Vụ</option>
-                            <option value="">Về Ưu Đãi Thành Viên</option>
-                            <option value="">Về Tín Tuyển Dụng</option>
-                        </select>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">Nội dung:</td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <textarea placeholder="Nội dung cần liên hệ" name="" id="" cols="50" rows="7"></textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>
-                        <button type="submit" value="Submit">Gửi</button>
-                    </td>
-                </tr>
-            </table>
+            <h1 class="theme">Góp ý</h1>
+            <div class="gradient"></div>
+            <div>
+                <div class="element_center">
+                    <label for="userName" class="fas fa-user"></label>
+                    <input type="text" name="" id="userName" placeholder="Vui lòng nhập Họ tên của bạn">
+                </div>
+                <div class="element_center">
+                    <label for="mail" class="fas fa-envelope"></label>
+                    <input type="email" name="" id="mail" placeholder="Vui lòng nhập địa chỉ Email">
+                </div>
+                <div class="element_center">
+                    <label class="fab fa-elementor" for="feedback"></label>
+                    <select size="1" id="feedback">
+                        <option value="">Về Sản Phẩm/Dịch Vụ</option>
+                        <option value="">Về Ưu Đãi Thành Viên</option>
+                        <option value="">Về Tín Tuyển Dụng</option>
+                    </select>
+                </div>
+                <div class="element_center">
+                    <i class="fas fa-sticky-note"></i>
+                    <textarea placeholder="Nội dung cần liên hệ" name="" id="" cols="50" rows="7"></textarea>
+                </div>
+                <button class="btn" type="submit" value="Submit" >Gửi</button>
+            </div>
         </fieldset>
         </form>
     </main>
