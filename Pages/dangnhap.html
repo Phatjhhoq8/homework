@@ -34,50 +34,31 @@
             </div>
         </nav>
     </header>
-    <main>
+    <main class="box">
         <fieldset>
-            <legend>ĐĂNG NHẬP</legend>
+            <h1 class="theme">ĐĂNG NHẬP</h1>
+            <div class="gradient"></div>
             <form action="" method="post" enctype="application/x-www-form-urlencoded">
-                <table>
-                    <tr>
-                        <td></td>
-                        <td>
-                            <img width="150" src="/data/images/dangnhap/userlogin.png" alt="">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="mail">Email</label>
-                        </td>
-                        <td>
-                            <input type="email" id="mail" placeholder="Nhập Email">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="pass">Mật Khẩu</label>
-                        </td>
-                        <td>
-                            <input type="password" id="pass" placeholder="Nhập mật khẩu">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td >
-                            <button type="submit" value="Sign_in">Đăng Nhập</button>
-                            <button type="reset" value="Reset">Hủy</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Bạn quên
-                            <a href="#">Mật Khẩu?</a>
-                        </td>
-                        <td>
-                            <input type="checkbox" name="remember">Ghi nhớ cho lần đăng nhập sau
-                        </td>
-                    </tr>
-                </table>
+            <img style="position: relative;left: 25%;" width="200px" src="/data/images/dangnhap/userlogin.png" alt="">
+            <div>
+                <div class="element_center">
+                    <label class="fas fa-envelope" for="mail"></label>
+                    <input type="email" id="mail" placeholder="Nhập Email">
+                </div>
+                <div class="element_center">
+                    <label class="fas fa-lock" for="pass"></label>
+                    <input type="password" id="pass" placeholder="Nhập mật khẩu">
+                </div>
+                <div class="element_center">
+                        Bạn quên
+                        <a href="#">Mật Khẩu?</a>
+                        <input type="checkbox" name="remember" checked>Ghi nhớ cho lần đăng nhập sau
+                </div> 
+                <div class="element_center">
+                    <button type="submit" value="Sign_in">Đăng Nhập</button>
+                    <button type="reset" value="Reset">Hủy</button>    
+                </div>
+            </div>       
             </form>
         </fieldset>
     </main>

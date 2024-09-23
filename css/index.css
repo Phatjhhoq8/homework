@@ -32,7 +32,7 @@ fieldset {
     position: relative;
     width: 200px;
     height: 3px;
-    margin: 0px 0px 16px;
+    margin: 5px 0px 16px;
     left: 42%;
     transform: rotateX('20') translateX(50%);
     background: radial-gradient(#cddc39,#fff);
@@ -78,15 +78,21 @@ body{
     grid-template-columns: auto auto auto auto;
     gap: 10px;
 }
+
+.col2_aside_right {
+    max-width: 1024px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+/* hai cột lệch trái */
 .col2_aside_left {
-    max-width: 1020px;
     grid-column-start: 1;
     grid-column-end: 2;
 }
-/* hai cột lệch trái */
-.col2_article_left {
+.col2_article_right {
     grid-column-start: 1;
-    grid-column-end: 3;
+    grid-column-end: 2;
+    max-width: 300px;
 }
 /* hai cột đối xứng */
 .col2_center {
@@ -114,6 +120,7 @@ header {
     border: 1px;
     border-color: #ccc7c8;
     border-radius: 5px;
+    position: relative;
     /* grid-area: header-cell; */
 }
 /* nav */ 
@@ -191,8 +198,8 @@ nav  a:hover {
 .icon {
     /* box-shadow: 0px 0px 2px 0px #0000004d; */
     position: absolute;
-    right: 20px;
-    top: 10%;
+    right: 1%;
+    bottom: 8%;
 }
 .fas,.fab {
     width: 20px;
@@ -303,6 +310,8 @@ footer a {
     border-color: #dbd7d9;
     border-style: solid;
     border-radius: 5px;
+    position: relative;
+    min-width: 330px;
 }
 .text_center+p {
     padding-left: 15px;
@@ -327,6 +336,10 @@ footer a {
     left: 25%;
 }
 /* Giới thiệu */
+.para {
+    position: relative;
+    min-width: 283px;
+}
 .gra_fix {
     position: absolute;
     top: 80%;
@@ -336,6 +349,13 @@ footer a {
     position: relative;
     top: 80px;
 }
-.para {
+/* tin tức */
+.left_aside {
     position: relative;
+}
+.block_ads {
+    display: flex;
+}
+.ads_img {
+    display: flex;
 }

@@ -34,67 +34,42 @@
             </div>
         </nav>
     </header>
-    <main>
+    <main class="box">
         <fieldset>
-            <legend>ĐĂNG KÝ</legend>
-            <table>
+            <h1 class="theme">ĐĂNG KÝ</h1>
+            <div class="gradient"></div>
                 <form action="" method="post" enctype="multipart/form-data">
-                    <tr>
-                        <td>
-                            <label for="mail">Email</label>
-                        </td>
-                        <td>
-                            <input id="mail" type="email" placeholder="Vui lòng nhập email!">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="pass">Mật Khẩu</label>
-                        </td>
-                        <td>
-                            <input id="pass" type="password" placeholder="Vui lòng nhập mật khẩu">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="apass">Nhập Lại Mật Khẩu</label>
-                        </td>
-                        <td>
-                            <input id="apass" type="password" placeholder="Vui lòng nhập mật khẩu">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="">Cấp độ thành viên</label>
-                        </td>
-                        <td>
-                            <input type="radio" name="memberType" id="" checked>Bạc
-                            <input type="radio" name="memberType" id="">Vàng
-                            <input type="radio" name="memberType" id="">Bạch Kim
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="pic">Ảnh đại diện</label>
-                        </td>
-                        <td>
-                            <input type="file" name="" id="pic">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            Thông qua việc tạo tài khoản, bạn đồng ý với 
-                            <a href="#">Điều khoản & Quyền riêng tư của chúng tôi</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <button type="reset" value="Reset">Hủy</button>
-                            <button type="submit">Đăng Ký</button>
-                        </td>
-                    </tr>
+                    <div class="element_center">
+                        <label for="mail" class="fas fa-envelope"></label>
+                        <input id="mail" type="email" placeholder="Vui lòng nhập email!">
+                    </div>
+                    <div class="element_center">
+                        <label for="pass" class="fas fa-lock"></label>
+                        <input id="pass" type="password" placeholder="Vui lòng nhập mật khẩu">
+                    </div>
+                    <div class="element_center">
+                        <label for="apass" class="fas fa-lock"></label>
+                        <input id="apass" type="password" placeholder="Vui lòng nhập mật khẩu">
+                    </div>
+                    <div class="element_center">
+                        <label for="" class="fas fa-gift"></label>
+                        <input type="radio" name="memberType" id="" checked>Bạc
+                        <input type="radio" name="memberType" id="">Vàng
+                        <input type="radio" name="memberType" id="">Bạch Kim
+                    </div>
+                    <div class="element_center">
+                        <label for="pic" class="fas fa-portrait"></label>
+                        <input type="file" name="" id="pic">
+                    </div>
+                    <div class="element_center">
+                        Thông qua việc tạo tài khoản, bạn đồng ý với 
+                        <a href="#">Điều khoản & Quyền riêng tư của chúng tôi</a>
+                    </div>
+                    <div class="element_center">
+                        <button type="submit">Đăng Ký</button>
+                        <button type="reset" value="Reset">Hủy</button>
+                    </div>
                 </form>
-            </table>
         </fieldset>
     </main>
     <footer>
