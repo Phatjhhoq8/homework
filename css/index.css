@@ -192,6 +192,7 @@ nav  a:hover {
     /* box-shadow: 0px 0px 2px 0px #0000004d; */
     position: absolute;
     right: 20px;
+    top: 10%;
 }
 .fas,.fab {
     width: 20px;
