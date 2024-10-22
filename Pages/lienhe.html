@@ -9,12 +9,11 @@
 <body>
     <header>
         <a href="trangchu.html" id="logo"><img src="/data/images/logo.png" height="45" alt="" ></a>
-        <!-- <img src="/data/images/logo.png" alt="logofreeeze" onclick="go()"> -->
             <table class="header_img">
                 <tr>
-                    <td><img src="../data/images/header-img1.png" class="header1" height="85" alt=""></td>
-                    <td><img src="../data/images/header-img2.png" class="header2" height="60" alt=""></td>
-                    <td><img src="../data/images/header-img3.png" class="header3" height="65" alt=""></td>
+                    <td><img src="../data/images/header-img1.png" class="header1" height="85px" alt=""></td>
+                    <td><img src="../data/images/header-img2.png" class="header2" height="60px" alt=""></td>
+                    <td><img src="../data/images/header-img3.png" class="header3" height="70px" alt=""></td>
                 </tr>
             </table>
         <nav>
@@ -28,9 +27,11 @@
                 <a href="lienhe.html">Liên Hệ</a>
             </div>
             <div class="icon">
-                <input type="text" placeholder="Nhập nội dung tìm kiếm">
-                <i class="fas fa-search"></i>
-                <i class="fas fa-shopping-cart"></i>
+                <form id="search-form" action="/Pages/timkiem.html" method="get">
+                    <input id="input-search" type="text" placeholder="Nhập nội dung tìm kiếm"  onkeydown="preventSubmitOnEnter(event)">
+                    <i class="fas fa-search" onclick="submitFunction()"></i>
+                    <i class="fas fa-shopping-cart" onclick="go_shopping()"></i>
+                </form>
             </div>
         </nav>
     </header>
@@ -39,7 +40,7 @@
         <div class="locate">
             <p><i class="fas fa-map-marker-alt"></i><strong>Địa chỉ: 0123,Tòa Nhà ABC,TP Cần Thơ</strong> Nếu bạn có góp ý,vui lòng liên hệ bằng thư điện tử hoặc sử dụng biểu mẫu bên dưới.Xin cảm ơn</p>
         </div>
-        <form action="" method="post" enctype="application/x-www-form-urlencoded">
+        <form action="" method="post" enctype="application/x-www-form-urlencoded" onsubmit="return validate(this)">
         <fieldset>
             <h1 class="theme">Góp ý</h1>
 
@@ -50,7 +51,7 @@
                 </div>
                 <div class="element_center">
                     <label for="mail" class="fas fa-envelope"></label>
-                    <input type="email" name="" id="mail" placeholder="Vui lòng nhập địa chỉ Email">
+                    <input type="text" name="" id="mail" placeholder="Vui lòng nhập địa chỉ Email">
                 </div>
                 <div class="element_center">
                     <label class="fab fa-elementor" for="feedback"></label>
@@ -62,7 +63,7 @@
                 </div>
                 <div class="element_center">
                     <i class="fas fa-sticky-note"></i>
-                    <textarea placeholder="Nội dung cần liên hệ" name="" id="" cols="50" rows="7"></textarea>
+                    <textarea placeholder="Nội dung cần liên hệ" name="" id="data" cols="50" rows="7"></textarea>
                 </div>
                 <button class="btn" type="submit" value="Submit" >Gửi</button>
             </div>
@@ -78,5 +79,41 @@
             <!-- <button id="goHead">Về đầu trang</button> -->
         </p>
     </footer>
+    <script>
+        var submitFunction= () => {
+            let inputSearch = document.getElementById("input-search");
+            let formSearch = document.getElementById("search-form");
+            inputSearch.value=inputSearch.value.trim();
+            if(inputSearch.value!="") formSearch.submit();
+        }
+        var preventSubmitOnEnter = (e) => {
+            if (e.key === "Enter") {
+                e.preventDefault();
+                submitFunction();
+            }
+        }
+        var validate = (frm) => {
+            var email = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+            var user=/.{4,}/
+            var da=/.{10,}/
+            if(user.test(frm.userName.value)==false) {
+                alert("Tên phải tối thiểu 4 chữ cái!");
+                return false;
+            }
+            if(email.test(frm.mail.value)==false) {
+                frm.mail.value="";
+                alert("Mail khôn ghợp lệ!");
+                return false;
+            }
+            if(da.test(frm.data.value)==false) {
+                alert("Liên hệ cần tối thiểu 10 kí tự");
+                return false;
+            }
+            return true;
+        }
+        var go_shopping=() => {
+            window.location.href="dongia.html";
+        }
+    </script>
 </body>
 </html>

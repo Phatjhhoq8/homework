@@ -9,12 +9,11 @@
 <body>
     <header>
         <a href="trangchu.html" id="logo"><img src="/data/images/logo.png" height="45" alt="" ></a>
-        <!-- <img src="/data/images/logo.png" alt="logofreeeze" onclick="go()"> -->
             <table class="header_img">
                 <tr>
-                    <td><img src="../data/images/header-img1.png" class="header1" height="85" alt=""></td>
-                    <td><img src="../data/images/header-img2.png" class="header2" height="60" alt=""></td>
-                    <td><img src="../data/images/header-img3.png" class="header3" height="65" alt=""></td>
+                    <td><img src="../data/images/header-img1.png" class="header1" height="85px" alt=""></td>
+                    <td><img src="../data/images/header-img2.png" class="header2" height="60px" alt=""></td>
+                    <td><img src="../data/images/header-img3.png" class="header3" height="70px" alt=""></td>
                 </tr>
             </table>
         <nav>
@@ -28,19 +27,21 @@
                 <a href="lienhe.html">Liên Hệ</a>
             </div>
             <div class="icon">
-                <input type="text" placeholder="Nhập nội dung tìm kiếm">
-                <i class="fas fa-search"></i>
-                <i class="fas fa-shopping-cart"></i>
+                <form id="search-form" action="/Pages/timkiem.html" method="get">
+                    <input id="input-search" type="text" placeholder="Nhập nội dung tìm kiếm"  onkeydown="preventSubmitOnEnter(event)">
+                    <i class="fas fa-search" onclick="submitFunction()"></i>
+                    <i class="fas fa-shopping-cart" onclick="go_shopping()"></i>
+                </form>
             </div>
         </nav>
     </header>
     <main class="box">
         <fieldset>
             <h1 class="theme">ĐĂNG KÝ</h1>
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="" method="post" enctype="multipart/form-data" onsubmit="return validate(this)">
                     <div class="element_center">
                         <label for="mail" class="fas fa-envelope"></label>
-                        <input id="mail" type="email" placeholder="Vui lòng nhập email!">
+                        <input id="mail" type="text" placeholder="Vui lòng nhập email!">
                     </div>
                     <div class="element_center">
                         <label for="pass" class="fas fa-lock"></label>
@@ -80,5 +81,42 @@
             <!-- <button id="goHead">Về đầu trang</button> -->
         </p>
     </footer>
+    <script>
+        var submitFunction= () => {
+            let inputSearch = document.getElementById("input-search");
+            let formSearch = document.getElementById("search-form");
+            inputSearch.value=inputSearch.value.trim();
+            if(inputSearch.value!="") formSearch.submit();
+        }
+        var preventSubmitOnEnter = (e) => {
+            if (e.key === "Enter") {
+                e.preventDefault();
+                submitFunction();
+            }
+        }
+        var validate = (frm) => {
+            var email = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+            var pwd = /.{8,}/
+            if(email.test(frm.mail.value)==false) {
+                frm.mail.value="";
+                alert("Mail khôn ghợp lệ!");
+                return false;
+            }
+            if(pwd.test(frm.pass.value)==false) {
+                frm.pass.value="";
+                alert("Mật khẩu tối thiểu 8 kí tự!");
+                return false;
+            }
+            if(frm.pass.value!=frm.apass.value) {
+                frm.apass.value="";
+                alert("Mật khẩu lặp lại không đúng!");
+                return false;
+            }
+            return true;
+        }
+        var go_shopping=() => {
+            window.location.href="dongia.html";
+        }
+    </script>
 </body>
 </html>

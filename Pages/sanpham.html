@@ -5,16 +5,16 @@
     <link rel="icon" href="../data/images/favicon.ico" type="images/vnd.microsoft.icon">
     <link rel="stylesheet" href="../fontawesome-free-5.12.1-web/css/all.min.css">
     <link rel="stylesheet" href="../css/index.css">
+    <script src="../js/index.js"></script>
 </head>
 <body>
     <header>
         <a href="trangchu.html" id="logo"><img src="/data/images/logo.png" height="45" alt="" ></a>
-        <!-- <img src="/data/images/logo.png" alt="logofreeeze" onclick="go()"> -->
             <table class="header_img">
                 <tr>
-                    <td><img src="../data/images/header-img1.png" class="header1" height="85" alt=""></td>
-                    <td><img src="../data/images/header-img2.png" class="header2" height="60" alt=""></td>
-                    <td><img src="../data/images/header-img3.png" class="header3" height="65" alt=""></td>
+                    <td><img src="../data/images/header-img1.png" class="header1" height="85px" alt=""></td>
+                    <td><img src="../data/images/header-img2.png" class="header2" height="60px" alt=""></td>
+                    <td><img src="../data/images/header-img3.png" class="header3" height="70px" alt=""></td>
                 </tr>
             </table>
         <nav>
@@ -28,9 +28,11 @@
                 <a href="lienhe.html">Liên Hệ</a>
             </div>
             <div class="icon">
-                <input type="text" placeholder="Nhập nội dung tìm kiếm">
-                <i class="fas fa-search"></i>
-                <i class="fas fa-shopping-cart"></i>
+                <form id="search-form" action="/Pages/timkiem.html" method="get">
+                    <input id="input-search" type="text" placeholder="Nhập nội dung tìm kiếm"  onkeydown="preventSubmitOnEnter(event)">
+                    <i class="fas fa-search" onclick="submitFunction()"></i>
+                    <i class="fas fa-shopping-cart" onclick="go_shopping()"></i>
+                </form>
             </div>
         </nav>
     </header>
@@ -46,8 +48,8 @@
                     </p>
                     <span class="gradie">
                         Số Lượng:
-                        <input type="number" max="100" min="0" value="0" size="3">
-                        <button>Đặt hàng</button>
+                        <input id="sp001" type="number" max="100" min="0" value="0" size="3">
+                        <button  class="add_items" onclick="insertItems('sp001')">Đặt hàng</button>
                     </span>
                 </section>
                 <section class="box">
@@ -58,8 +60,8 @@
                     </p>
                     <span class="gradie">
                         Số Lượng:
-                        <input type="number" max="100" min="0" value="0" size="3">
-                        <button>Đặt hàng</button>
+                        <input id="sp002" type="number" max="100" min="0" value="0" size="3">
+                        <button class="add_items" onclick="insertItems('sp002')">Đặt hàng</button>
                     </span>
                 </section>
                 <section class="box">
@@ -70,8 +72,8 @@
                     </p>
                     <span class="gradie">
                         Số Lượng:
-                        <input type="number" max="100" min="0" value="0" size="3">
-                        <button>Đặt hàng</button>
+                        <input id="sp003" type="number" max="100" min="0" value="0" size="3">
+                        <button class="add_items" onclick="insertItems('sp003')">Đặt hàng</button>
                     </span>
                 </section>
             </div>
@@ -87,8 +89,8 @@
                     </p>
                     <span class="gradie">
                         Số Lượng:
-                        <input type="number" max="100" min="0" value="0" size="3">
-                        <button>Đặt hàng</button>
+                        <input id="sp004" type="number" max="100" min="0" value="0" size="3">
+                        <button class="add_items" onclick="insertItems('sp004')">Đặt hàng</button>
                     </span>
                 </section>
                 <section class="box">
@@ -99,8 +101,8 @@
                     </p>
                     <span class="gradie">
                         Số Lượng:
-                        <input type="number" max="100" min="0" value="0" size="3">
-                        <button>Đặt hàng</button>
+                        <input id="sp005" type="number" max="100" min="0" value="0" size="3">
+                        <button class="add_items" onclick="insertItems('sp005')">Đặt hàng</button>
                     </span>
                 </section>
                 <section class="box">
@@ -111,8 +113,8 @@
                     </p>
                     <span class="gradie">
                         Số Lượng:
-                        <input type="number" max="100" min="0" value="0" size="3">
-                        <button>Đặt hàng</button>
+                        <input id="sp006" type="number" max="100" min="0" value="0" size="3">
+                        <button class="add_items" onclick="insertItems('sp006')">Đặt hàng</button>
                     </span>
                 </section>
             </div>
@@ -128,8 +130,8 @@
                     </p>
                     <span class="gradie">
                         Số Lượng:
-                        <input type="number" max="100" min="0" value="0" size="3">
-                        <button>Đặt hàng</button>
+                        <input id="sp007" type="number" max="100" min="0" value="0" size="3">
+                        <button class="add_items" onclick="insertItems('sp007')">Đặt hàng</button>
                     </span>
                 </section>
                 <section class="box">
@@ -140,8 +142,8 @@
                     </p>
                     <span class="gradie">
                         Số Lượng:
-                        <input type="number" max="100" min="0" value="0" size="3">
-                        <button>Đặt hàng</button>
+                        <input id="sp008" type="number" max="100" min="0" value="0" size="3">
+                        <button class="add_items" onclick="insertItems('sp008')">Đặt hàng</button>
                     </span>
                 </section>
                 <section class="box">
@@ -152,8 +154,8 @@
                     </p>
                     <span class="gradie">
                         Số Lượng:
-                        <input type="number" max="100" min="0" value="0" size="3">
-                        <button>Đặt hàng</button>
+                        <input id="sp009" type="number" max="100" min="0" value="0" size="3">
+                        <button class="add_items" onclick="insertItems('sp009')">Đặt hàng</button>
                     </span>
                 </section>
             </div>
@@ -169,5 +171,36 @@
             <!-- <button id="goHead">Về đầu trang</button> -->
         </p>
     </footer>
+    <script>
+        var submitFunction= () => {
+            let inputSearch = document.getElementById("input-search");
+            let formSearch = document.getElementById("search-form");
+            inputSearch.value=inputSearch.value.trim();
+            if(inputSearch.value!="") formSearch.submit();
+        }
+        var preventSubmitOnEnter = (e) => {
+            if (e.key === "Enter") {
+                e.preventDefault();
+                submitFunction();
+            }
+        }
+        var insertItems = (item) => {
+            let num=parseInt(document.getElementById(item).value);
+            if(num!==0) {
+                if(typeof localStorage[item]==="undefined") {
+                    window.localStorage.setItem(item,num);
+                } else {
+                    let cur =parseInt(window.localStorage.getItem(item));
+                    num+=cur;
+                    if(num>100) num=100;
+                    window.localStorage.setItem(item,num);
+                }
+                alert("Đã thêm "+ itemList[item].name + " thành công!");
+            }
+        }
+        var go_shopping=() => {
+            window.location.href="dongia.html";
+        }
+    </script>
 </body>
 </html>

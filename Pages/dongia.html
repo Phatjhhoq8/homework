@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/index.js"></script>
+    <title>Dơn Giá</title>
+</head>
+<body>
+    <h1>Đơn hàng của bạn là :</h1>
+    <table id="data-items">
+
+    </table>
+    <script>
+        var showCart = () => {
+            let ta=document.getElementById("data-items");
+            ta.innerHTML=''
+            for(let i =0 ; i<localStorage.length;i++) {
+                let itemId=localStorage.key(i);
+                let item=itemList[itemId];
+
+                let tr=document.createElement('tr');
+                
+                let tdImg=document.createElement("td");
+                tdImg.innerHTML="<img src='"+ item.photo +"'class='round-figure' width='100px'/>";
+
+                let tdName=document.createElement("td");
+                tdName.innerHTML="<h1>"+item.name+"</h1>";
+
+                let soLuong=document.createElement("td");
+                soLuong.innerHTML="<h1>"+window.localStorage.getItem(itemId)+"</h1>";
+
+                tr.appendChild(tdImg);
+                tr.appendChild(tdName);
+                tr.appendChild(soLuong);
+                
+                ta.appendChild(tr)
+            }
+        }
+        window.onload=showCart()
+        window.onstorage = () => {
+            showCart();
+        }
+    </script>
+</body>
+</html>

@@ -11,12 +11,11 @@
     <body>
         <header>
             <a href="trangchu.html" id="logo"><img src="/data/images/logo.png" height="45" alt="" ></a>
-            <!-- <img src="/data/images/logo.png" alt="logofreeeze" onclick="go()"> -->
                 <table class="header_img">
                     <tr>
-                        <td><img src="../data/images/header-img1.png" class="header1" height="85" alt=""></td>
-                        <td><img src="../data/images/header-img2.png" class="header2" height="60" alt=""></td>
-                        <td><img src="../data/images/header-img3.png" class="header3" height="65" alt=""></td>
+                        <td><img src="../data/images/header-img1.png" class="header1" height="85px" alt=""></td>
+                        <td><img src="../data/images/header-img2.png" class="header2" height="60px" alt=""></td>
+                        <td><img src="../data/images/header-img3.png" class="header3" height="70px" alt=""></td>
                     </tr>
                 </table>
             <nav>
@@ -30,9 +29,11 @@
                     <a href="lienhe.html">Liên Hệ</a>
                 </div>
                 <div class="icon">
-                    <input type="text" placeholder="Nhập nội dung tìm kiếm">
-                    <i class="fas fa-search"></i>
-                    <i class="fas fa-shopping-cart"></i>
+                    <form id="search-form" action="/Pages/timkiem.html" method="get">
+                        <input id="input-search" type="text" placeholder="Nhập nội dung tìm kiếm"  onkeydown="preventSubmitOnEnter(event)">
+                        <i class="fas fa-search" onclick="submitFunction()"></i>
+                        <i class="fas fa-shopping-cart" onclick="go_shopping()"></i>
+                    </form>
                 </div>
             </nav>
         </header>
@@ -102,5 +103,22 @@
             <!-- <button id="goHead">Về đầu trang</button> -->
         </p>
     </footer>
+    <script>
+        var submitFunction= () => {
+            let inputSearch = document.getElementById("input-search");
+            let formSearch = document.getElementById("search-form");
+            inputSearch.value=inputSearch.value.trim();
+            if(inputSearch.value!="") formSearch.submit();
+        }
+        var preventSubmitOnEnter = (e) => {
+            if (e.key === "Enter") {
+                e.preventDefault();
+                submitFunction();
+            }
+        }
+        var go_shopping=() => {
+            window.location.href="dongia.html";
+        }
+    </script>
 </body>
 </html>
