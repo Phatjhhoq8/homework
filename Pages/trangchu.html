@@ -8,6 +8,7 @@
     <link rel="icon" href="../data/images/favicon.ico" type="images/vnd.microsoft.icon">
     <link rel="stylesheet" href="../fontawesome-free-5.12.1-web/css/all.min.css">
     <link rel="stylesheet" href="../css/index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 <body>
     <header>
@@ -39,6 +40,7 @@
         </nav>
     </header>
     <main class="block">
+        <div id="headline"></div>
         <arcticle>
             <img src="/data/images/trangchu/bg-home.jpg" alt="" width="100%">
             <section>
@@ -132,6 +134,81 @@
         var go_shopping=() => {
             window.location.href="dongia.html";
         }
+        //hiển thị quảng cáo
+        var d = new Date();
+        var ads = "Khách hàng có ngày sinh trong tháng " + (d.getMonth() + 1) + " sẽ được tặng 2 phần sữa chua dâu cho đơn hàng đầu tiên trong tháng.";
+        $(document).ready(function () {
+            $("footer").append("<div id='adscontainer'><span id='adstext'><h2>" + ads + "</h2></span></div>");
+            var wm = ($(window).width() - $("main").width()) / 2;
+            console.log(wm)
+            if (wm >= 200) {
+                adsHorEffect();
+            }
+            else {
+                adsVerEffect();
+            }
+            //hiển thị tin nổi bật ở trang chủ
+            /*Quảng cáo cuộn dọc màn hình**/
+            var adsVerEffect = () => {
+                $('div #adscontainer').addClass('container adsvercontainer');
+                $('div #adscontainer').css('width', wm);
+                $('span #adstext').addClass('adsvertext', 'adstext');
+                $('span #adstext').css('top', $('div #adscontainer').height());
+                $('span #adstext').animate({
+                    top: top - ($('div #adscontainer').outerHeight(true) + $('span #adstext').position().top)
+                }, 30000, adsVerEffect());
+            }
+            /*Quảng cáo cuộn ngang màn hình**/
+            var adsHorEffect = () => {
+                $('div #adscontainer').addClass('container adshorcontainer');
+                $('div #adscontainer').css('left', $('main').position.left());
+                $('div #adscontainer').css('width', $('main').width());
+                $('span #adstext').addClass('adshortext', 'adstext');
+                $('span #adstext').css('left', $('div #adscontainer').width());
+                $('span #adstext').animate({
+                    left: left - ($('div #adscontainer').width() + $('span #adstext').width())
+                }, 30000, adsHorEffect());
+            }
+        });
+        $(document).ready(function() {
+            //câu 3 tin nổi bật headline trang chủ
+            var headlineContent = [{
+                "title": "Bánh flan sữa chua - sự kết hợp hoàn hảo",
+                "photo": "headline/headline1.jpg"
+            },
+            {
+                "title": "Sữa chua làm từ sữa dê - đậm đà hương vị khó quên",
+                "photo": "headline/headline2.jpg"
+            },
+            {
+                "title": "Thưởng thức sữa chua theo cách của bạn",
+                "photo": "headline/headline3.jpg"
+            }];
+            function init() {
+                headlineContent.forEach(function (item) {
+                    $("#headline").append(`
+            <div>
+                <span>
+                    <h3>${item.title}</h3>
+                </span>
+                <img src="${item.photo}"></div>`);
+                });
+            }
+            function headlineEffect() {
+                init();
+                //ẩn các thẻ div sau thẻ div đầu tiên
+                $("#headline > div:gt(0)").hide();
+                setInterval(function () {
+                    $('#headline > div:first')
+                    .hide()
+                    .next()
+                    .fadeIn(1000)
+                    .end()
+                    .appendTo('#headline')
+                }, 5000);
+            }
+            headlineEffect();
+        })
     </script>
 </body>
 </html>
